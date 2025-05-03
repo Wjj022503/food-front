@@ -28,7 +28,7 @@ export async function signup(userData) {
 
 export async function login(userData) {
     try{ 
-        const response = await axios.post(`https://appfood-back-gxd7g3hacpacf7ha.canadacentral-01.azurewebsites.net:5000/auth/login`, {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`, {
             email: userData.email,
             password: userData.password,
           });
