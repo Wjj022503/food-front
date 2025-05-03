@@ -5,6 +5,7 @@ axios.defaults.withCredentials = true;
 
 export async function signup(userData) {
     try {
+        console.log("BACKEND URL:", process.env.NEXT_PUBLIC_BACKEND_URL);  // Added for debugging
         const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/signup`, {
             email: userData.email,
             password: userData.password,
@@ -27,7 +28,8 @@ export async function signup(userData) {
 }
 
 export async function login(userData) {
-    try{ 
+    try{
+        console.log("BACKEND URL:", process.env.NEXT_PUBLIC_BACKEND_URL);  // Added for debugging 
         const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`, {
             email: userData.email,
             password: userData.password,
@@ -48,7 +50,8 @@ export async function login(userData) {
 }
 
 export async function merchant_login(userData) {
-    try{ 
+    try{
+        console.log("BACKEND URL:", process.env.NEXT_PUBLIC_BACKEND_URL);  // Added for debugging 
         const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/merchant/login`, {
             email: userData.email,
             password: userData.password,

@@ -1,16 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      remotePatterns: [
-        {
-          protocol: 'http',
-          hostname: 'localhost',
-          port: '5000',
-          pathname: '/images/**',
-        },
-      ],
-    },
-  };
-  
-  export default nextConfig;
-  
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'appfood-back-gxd7g3hacpacf7ha.canadacentral-01.azurewebsites.net',
+        pathname: '/images/**',
+      },
+    ],
+  },
+};
+
+export default nextConfig;
