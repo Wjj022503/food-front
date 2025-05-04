@@ -32,7 +32,7 @@ jobs:
       - name: Zip artifact for deployment
         run: |
           mkdir build
-          cp -r .next public package.json package-lock.json node_modules build/ ./.env.production
+          cp -r .next public package.json package-lock.json node_modules build/
           cd build && zip -r ../release.zip .
 
       - name: Upload artifact for deployment job
