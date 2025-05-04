@@ -63,7 +63,7 @@ export default function MerchantPage() {
             {/* Image background */}
             <div className="absolute inset-0 z-0">
               <Image
-                src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${merchant.image.startsWith('/') ? '' : '/'}${merchant.image}`}
+                src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${merchant.image.startsWith('/') ? '' : '/'}${merchant.image}`}
                 alt={merchant.merchantName}
                 fill
                 className="object-cover"
