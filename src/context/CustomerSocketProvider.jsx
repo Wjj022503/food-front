@@ -49,7 +49,6 @@ export function CustomerSocketProvider({ children }) {
       });
       
       socketRef.current.on('orderReady', (order) => {
-          console.log('Your order is ready to pick up----------------------', order);
           toast.success(`Order #${order.id} is ready to pick up!`,{
             duration: 5000,
             style: {
@@ -66,6 +65,24 @@ export function CustomerSocketProvider({ children }) {
           });         
         }
       );
+
+      socketRef.current.on('orderCancelled', (order) => {
+          toast.error(`Order #${order.id} has been cancelled by merchant!`,{
+            duration: 5000,
+            style: {
+              borderRadius: '10px',
+              background: '#333',
+              color: '#ff0000',
+            }
+          });
+          //update order status in the list
+          setOrders(prevOrders => {
+            return prevOrders.map(o => 
+              o.id === order.id ? { ...o, status: order.status } : o
+            );
+          });         
+        }
+      );      
     }
 
     return () => {
