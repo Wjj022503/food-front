@@ -165,7 +165,7 @@ export default function MerchantOrdersPage() {
                 <button onClick={() => setShowConfirmCancel(false)} className="!px-4 !py-2 !border-none rounded-md text-sm font-semibold">
                   No
                 </button>
-                <button onClick={() => { handleUpdateStatus(orderToUpdateStatus.id,'Cancelled'); setShowConfirmCancel(false); }} className="!bg-green-500 !text-black !border-none !px-4 !py-2 rounded-md font-semibold">
+                <button onClick={() => { handleUpdateStatus(orderToUpdateStatus.id,'Cancelled'); setShowConfirmCancel(false); }} className="!bg-red-500 !text-black !border-none !px-4 !py-2 rounded-md font-semibold">
                   Yes, Cancel
                 </button>
               </div>
